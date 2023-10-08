@@ -1,7 +1,6 @@
 import 'package:apex_mobile/services/api_service.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:flutter/widgets.dart';
 
 class MapRotationPage extends StatefulWidget {
   const MapRotationPage({Key? key}) : super(key: key);
@@ -161,8 +160,7 @@ class _MapRotationPageState extends State<MapRotationPage> {
                           ),
                           const SizedBox(height: 16),
                           Image.network(
-                            mapRotationData!['ltm']['current']['asset']
-                                .replaceAll('\\', ''),
+                            mapRotationData!['ltm']['current']['asset'],
                             width: double.infinity,
                             height: 100,
                             fit: BoxFit.cover,
@@ -182,8 +180,7 @@ class _MapRotationPageState extends State<MapRotationPage> {
                           ),
                           const SizedBox(height: 16),
                           Image.network(
-                            mapRotationData!['ltm']['next']['asset']
-                                .replaceAll('\\', ''),
+                            mapRotationData!['ltm']['next']['asset'],
                             width: double.infinity,
                             height: 100,
                             fit: BoxFit.cover,
