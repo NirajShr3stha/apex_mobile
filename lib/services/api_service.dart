@@ -2,7 +2,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 //MAP ROTATION API
-class ApiService {
+class MapApiService {
   static const apiKey = 'a2bb8c12bd1d0d81a84c6e0ddc401369';
   static const version = '2'; //1 for battle royale pubs only, 2 for all modes.
 
@@ -18,3 +18,6 @@ class ApiService {
     }
   }
 }
+
+
+//CRAFTER ROTATION API
