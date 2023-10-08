@@ -50,3 +50,19 @@ class NewsApiService {
     }
   }
 }
+
+//PLAYER STATS API
+class PlayerStatsApiService {
+  Future<Map<String, dynamic>> getPlayerStats(String username) async {
+    final url = 'https://api.mozambiquehe.re/bridge?auth=$apiKey&player=$username&platform=PC';
+
+    final response = await http.get(Uri.parse(url));
+
+    if (response.statusCode == 200) {
+      final jsonData = json.decode(response.body);
+      return jsonData;
+    } else {
+      throw Exception('Failed to fetch player stats data');
+    }
+  }
+}

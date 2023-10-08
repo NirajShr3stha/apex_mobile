@@ -1,6 +1,7 @@
 import 'package:apex_mobile/views/apex_news.dart';
 import 'package:apex_mobile/views/crafter_rotation.dart';
 import 'package:apex_mobile/views/map_rotation.dart';
+import 'package:apex_mobile/views/player_stats.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -46,6 +47,16 @@ class HomePage extends StatelessWidget {
                 );
               },
               child: const Text('NEWS'),
+            ),
+            //PLAYER STATS
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PlayerStatsPage()),
+                );
+              },
+              child: const Text('PLAYER STATS'),
             ),
           ],
         ),
