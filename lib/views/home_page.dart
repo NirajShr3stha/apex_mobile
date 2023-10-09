@@ -2,10 +2,11 @@ import 'package:apex_mobile/views/apex_news.dart';
 import 'package:apex_mobile/views/crafter_rotation.dart';
 import 'package:apex_mobile/views/map_rotation.dart';
 import 'package:apex_mobile/views/player_stats.dart';
+import 'package:apex_mobile/views/sub_screen/login_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +14,14 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Apex Legends Mobile'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Container(
+        color: const Color(0xFF17194C),
+        child: GridView.count(
+          crossAxisCount: 3,
+          padding: const EdgeInsets.all(16),
+          mainAxisSpacing: 16,
+          crossAxisSpacing: 16,
           children: [
-            const SizedBox(height: 16),
-            //MAP ROTATION
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -28,7 +31,6 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Map Rotation'),
             ),
-            //CRAFTER ROTATION
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -38,7 +40,6 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Crafter Rotation'),
             ),
-            //APEX NEWS
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -48,7 +49,6 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('NEWS'),
             ),
-            //PLAYER STATS
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -56,7 +56,25 @@ class HomePage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => PlayerStatsPage()),
                 );
               },
-              child: const Text('PLAYER STATS'),
+              child: const Text('Player Stats'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PlayerStatsPage()),
+                );
+              },
+              child: const Text('To reach Predator'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                );
+              },
+              child: const Text('Store Items'),
             ),
           ],
         ),
